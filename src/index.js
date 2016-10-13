@@ -18,7 +18,7 @@ class App extends Component {
             selectedVideo: null
         };
 
-        YTSearch({key: API_KEY, term: 'surfboards' }, (videos) => {
+        YTSearch({key: API_KEY, term: 'malawi' }, (videos) => {
             this.setState( {videos: videos, selectedVideo: videos[0]} );
         });
     }
@@ -31,7 +31,7 @@ class App extends Component {
                 <SearchBar />
                 <VideoDetail video={this.state.selectedVideo} />
                 <VideoList videos={this.state.videos} 
-                    onVideoSelect={ (selectedVideo) => this.setState({selectedVideo})}
+                    onVideoSelect={selectedVideo => this.setState({selectedVideo}) }
                 />
             </div>
         );
